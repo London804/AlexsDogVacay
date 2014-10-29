@@ -1,0 +1,342 @@
+@import "bootstrap/less/bootstrap.less";
+
+@grid-float-breakpoint:  @screen-md-min;
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.post {
+    .make-xs-column(12);  //this is actually being divided by 12 and the result indiciates the amount of columns.
+    .make-sm-column(6);
+    .make-md-column(4); //you can achieve the same thing by using a percentage ex. 25% and then writing a media query at different screen sizes
+//    .make-lg-column(3);
+   padding: 5px;
+   z-index: 0;
+}
+
+
+.relative {
+    position: relative;
+}
+
+.parent {
+    position: relative;
+}
+
+.container {
+     width: 100%;
+}
+
+.pagination#next {
+    float: right;
+    position: relative;
+    bottom: 10px;
+    visibility: hidden;
+}
+
+.pagination#back {
+    float: left;
+    position: relative;
+    bottom: 10px;
+    visibility: hidden;
+}
+
+#infscr-loading {
+    text-align: center;
+    display: block;
+    z-index: 100000;
+
+    img {
+        display: block;
+        /* z-index: 1000000; */
+        position: absolute;
+        margin: 0 auto;
+        text-align: center;
+        width: 220px;
+        height: 19px;
+    }
+}
+
+.navbar {
+    border-radius: 0;
+    margin: 0 5px;
+    margin-bottom: 5px;
+    position: relative;
+    top: 10px;
+}
+
+.navbar-default {
+
+}
+header img {
+    padding: 5px;
+    position: relative;
+}
+
+.title {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fafafa !important;
+    &:hover {
+        color: darken(#fafafa, 30%) !important;
+    }
+}
+a.contact-link {
+    color: #fafafa;
+    font-weight: bold;
+}
+
+.rotate {
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+}
+
+.social-icons {
+    display: inline-block;
+    .translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding-left: 0;
+    z-index: 10000;
+    width: 193px;
+
+    li {
+        list-style: none;
+        display: inline;
+        margin-right: 8px;
+
+       &:last-child {
+        margin-right: 0;
+       }
+
+    }
+    a {
+        display: inline-block;
+
+    }
+}
+
+.black-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    height: 100%;
+    width: 100%;
+    opacity: .3;
+    display: none;
+}
+
+.fb2 {
+    background: transparent url('../img/fb-100.png') no-repeat 0 0;
+    width: 65px;
+    height: 65px;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.pin2 {
+    background: transparent url('../img/pinterest-logo.png') no-repeat 0 0;
+    width: 65px;
+    height: 65px;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.tw2 {
+    background: transparent url('../img/twitter.png') no-repeat 0 0;
+    width: 65px;
+    height: 65px;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.fb {
+    background: transparent url('../img/social-icons.png') no-repeat 0 0;
+    width: 29px;
+    height: 29px;
+    display: inline-block;
+
+    &:hover {
+        background: transparent url('../img/social-icons.png') no-repeat 0 -29px;
+        position: relative;
+        top: 1px;
+    }
+}
+
+.tw {
+    background: transparent url('../img/social-icons.png') no-repeat -39px 0;
+    width: 29px;
+    height: 29px;
+    display: inline-block;
+
+    &:hover {
+        background: transparent url('../img/social-icons.png') no-repeat -39px -29px;
+        position: relative;
+        top: 1px;
+    }
+}
+
+.pin {
+    background: transparent url('../img/social-icons.png') no-repeat -78px 0;
+    width: 29px;
+    height: 29px;
+    display: inline-block;
+
+    &:hover {
+        background: transparent url('../img/social-icons.png') no-repeat -78px -29px;
+        position: relative;
+        top: 1px;
+    }
+}
+
+#contact .parent img {
+    padding: 5px;
+}
+
+.form-container {
+    margin: 5px;
+    background: #d1d1d1;
+    padding: 20px;
+
+
+    textarea {
+        resize: none;
+    }
+
+    .btn {
+        float: right;
+    }
+}
+
+.error-msg {
+    padding: 5px 0 0 10px;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+//#result {
+//    display: none;
+//}
+
+.backTop {
+    background: transparent url('../img/back_to_top_mobile.png') no-repeat 0 0;
+    width: 25px;
+    height: 25px;
+    display: block;
+    bottom: 20px;
+    right: 1px;
+    opacity: .6;
+    cursor: pointer;
+    z-index:1000;
+    &:hover {
+        opacity:.7;
+    }
+    position: fixed;
+}
+
+.fixed {
+    position: fixed;
+}
+
+@media (min-width: @screen-sm-min) {
+    .form-container {
+        form {
+        max-width: 700px;
+        width: 60%;
+        margin: 0 auto;
+        }
+        #form-msg {
+            max-width: 700px;
+            width: 60%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+    }
+    .title {
+        font-size: 22px;
+    }
+    .navbar {
+        border-radius: 0;
+    }
+
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 0;
+    }
+
+    .social-icons {
+        width: auto;
+         li {
+        margin-right: 2px;
+        }
+    }
+    .backTop {
+        background: transparent url('../img/back_to_top.png') no-repeat 0 0;
+        width: 60px;
+        height: 60px;
+        display: block;
+        bottom: 20px;
+        right: 10px;
+        opacity: .6;
+        cursor: pointer;
+        &:hover {
+            opacity:1;
+        }
+    }
+}
+
+//tumblr buttons
+
+.def_likebut, .like_button, .def_reblogbut, .def_reblogbut a, .def_reblogbut svg, .reblog_button {
+    display: inline-block !important;
+}
+
+#tumblr_controls {
+    display:none;
+}
+
+#contactPage {
+    height: 610px !important;
+    border: none;
+}
+
+@media (min-width: @screen-md-min) {
+    #contactPage {
+        height: 539px !important;
+    }
+    .social-icons {
+        width: 170px;
+    }
+}
+
+@media (min-width: @screen-lg-min) {
+    .container {
+        width: 88%;
+//        max-width: 1400px;
+    }
+
+    .backTop {
+        right: 20px;
+    }
+
+    .social-icons {
+        width: auto;
+    }
+}
+
+.success{ background: #CFFFF5;padding: 10px; margin-bottom: 10px; border: 1px solid #B9ECCE; border-radius: 5px; font-weight: normal; }
+.error{ background: #FFDFDF; padding: 10px; margin-bottom: 10px; border: 1px solid #FFCACA; border-radius: 5px; font-weight: normal;}
+
+#contact_form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: darken(#fafafa, 7%);
+
+}

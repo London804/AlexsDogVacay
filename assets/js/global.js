@@ -41,8 +41,25 @@
                 speed: 'fast'
             }
         }, //callback to make the all work together
+//        function(newitems) {
+//            $container.append(newitems);
+//            imagesLoaded(newitems, function(){
+//                $container.masonry('appended', newitems);
+//                $container.masonry('layout');
+//            });
+//        });
+    //makes likes work on new pages added https://www.tumblr.com/docs/en/custom_themes#like_and_reblog_buttons
         function(newitems) {
+            var post_ids = [], i;
+
             $container.append(newitems);
+
+            for(i=0; i < newitems.length; i++) {
+                post_ids.push(newitems[i].id);
+            }
+            // this is to make sure like buttons work on dynamically loaded posts
+            Tumblr.LikeButton.get_status_by_post_ids(post_ids);
+
             imagesLoaded(newitems, function(){
                 $container.masonry('appended', newitems);
                 $container.masonry('layout');
@@ -72,7 +89,7 @@
 
 //social icons init
     $(document).on('click', '.social-icons a', function(e){
-        e.preventDefault();
+//        e.preventDefault();
         var action = $(this).attr('href'),
             site_url = window.location.href,
             photo_url = site_url + '/img/pinterestShare.jpg', //this is the image that goes into the copy
